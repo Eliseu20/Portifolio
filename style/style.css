@@ -1,0 +1,329 @@
+html {
+    scroll-behavior: smooth;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(../img/lindo-amanhecer-na-praia-sob-um-ceu-azul.jpg);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+ 
+}
+
+body h2 {
+    text-transform: uppercase;
+}
+.menu {
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100vw;
+}
+
+.home, .projet, .Sobre , .contato {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100vh;
+}
+
+.menu .heading::selection {
+    display: none;
+}
+
+.menu .heading {
+    cursor: default;
+}
+
+.menu section {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.menu h1 {
+    text-transform: uppercase;
+    font-size: 25px;
+    padding: 15px;
+    color: #fff;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px;
+    transition: 0.5s ease-in-out;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    margin: auto 0;
+}
+
+nav {
+    margin: auto 0;
+}
+
+.menu a:hover {
+    background-color: rgba(0,0,0,0.6);
+    margin: 18px;
+}
+
+main h2 {
+    text-align: center;
+}
+
+main section {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+}
+
+.up a {
+    position: fixed;
+    background-color: rgb(170, 161, 179);
+    width: 3rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    right: 2rem;
+    bottom: 4rem;
+    display: flex;
+    border-radius: 50%;
+    font-size: 20px;
+    
+    
+}
+
+.footer {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    min-width: 518px;
+}
+
+.footer a {
+    text-decoration: none;
+    padding: 8px;
+    color: #fff;
+    transition: 0.5s ease-in-out;
+}
+
+.footer a:hover {
+    background-color: rgb(170, 161, 179);
+}
+
+.img {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 10rem;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.footer span {
+    padding: 8px;
+}
+
+.h3 h3 {
+    padding: 8px;
+}
+
+.Sobre p, .home p {
+    font-size: 18px;
+}
+
+.contato form [name="email"], [name="name"] {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    max-width: 300px;
+}
+
+.contato form [name="message"] {
+    border-radius: 8px;
+    margin-bottom: 8px;
+    width: 400px;
+}
+
+.contato form [value="Enviar"] {
+    width: 140px;
+    cursor: pointer;
+    background-color: rgb(21, 21, 91);
+    height: 30px;
+    border-radius: 8px;
+    color: hsl(0, 0%, 100%);
+    /* position: absolute; */
+    /* left: 40.3%; */
+    /* margin: 0 auto; */
+    
+}
+
+/* here is to care about grids */
+
+.grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill, minmax(800px, 2fr)); */
+}
+
+
+
+/* Here is to care about the responsivity of site */
+
+/* Menu responsive */
+@media (max-width: 800px) {
+    .menu {
+        z-index: 1;
+        bottom: 0;
+        text-align: center;
+    }
+
+    .main-content, .main-content ul {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+   .img {
+    width: 150px;
+    height: 150px;
+   }
+
+
+    .menu {
+        display: none;
+    }
+
+    .menu li {
+        padding: 8px;
+        transition: 0.5s ease-in-out;
+    }
+
+    .menu li:hover {
+        padding: 18px;
+    }
+
+
+
+    .footer {
+        text-align: center;
+    }
+
+    .footer a, .footer > span {
+        margin-left: -20%;
+        display: grid;
+
+
+    }
+
+    .cmenu {
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+
+    .close-menu-l::after {
+        content: '☰';
+        position: fixed;
+        z-index: 2;
+        top: 1rem;
+        right: 1rem;
+        line-height: 3rem;
+        font-size: 2rem;
+        cursor: pointer;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+        padding: 8px;
+        background-color: rgba(0, 0, 0, 0.4)
+    }
+
+    .cmenu:checked~.menu {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow-y: hidden;
+    }
+
+
+    .cmenu:checked~.close-menu-l::after {
+        content: 'x';
+    }
+
+    main .name {
+        display: block;
+        margin-top: 22px;
+    }
+
+    .contato form [name="message"] {
+        width: 350px;
+    }
+
+}
+
+@media not (max-width: 800px) {
+    .cmenu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .img {
+        width: 200px;
+        height: 200px;
+       }
+
+       .footer a, .footer span {
+        margin-right: -20%;
+       }
+}
+
+@media (max-width: 412px) {
+
+    .footer a, .footer span {
+     margin-left: -32%;
+    }
+}
+
+@media (max-width: 393px) {
+    .img {
+        width: 150px;
+        height: 150px;
+       }
+
+       .footer a, .footer span {
+        margin-right: 10%;
+       }
+
+}
+
+
+@media (max-width: 375px) {
+    .img {
+        width: 110px;
+        height: 110px;
+       }
+
+       .footer a, .footer span {
+        margin-right: 20%;
+       }
+}
